@@ -6,6 +6,11 @@ public class ShoppingCart {
         ArrayList<String> cart = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
+        // IO goes here
+
+        
+
+
         String input = scanner.next();
         
         
