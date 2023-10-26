@@ -8,8 +8,9 @@ public class ShoppingCart {
 
         String input = scanner.next();
         
-        // list
+        
         while (!"stop".equals(input)){
+            // list
             if(input.equals("list")) {
                 if (cart.isEmpty()) {
                     System.out.println("The cart is empty!");
@@ -39,9 +40,17 @@ public class ShoppingCart {
 
             // delete
             else if (input.equals("delete")) {
-                int index = Integer.parseInt(scanner.next());
-                System.out.println(cart.get(index) + " has been deleted");
-                cart.remove(index);
+                if (cart.isEmpty()) {
+                    System.out.println("The cart is empty!");
+                } else {
+                    int index = scanner.nextInt();
+                    if (index < 1 || index > cart.size()) {
+                        System.out.println("Incorrect item index!");
+                    } else {
+                        String deletedItem = cart.remove(index - 1);
+                        System.out.println(deletedItem + " has been deleted");
+                    }
+                }
                 input = scanner.next();
             }
             else {
