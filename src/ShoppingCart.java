@@ -103,7 +103,7 @@ public class ShoppingCart {
                 } else {
                     try (BufferedReader br = new BufferedReader(new FileReader(userFilePath.toString()))) {
                         String line;
-                        cart.clear(); // Clear the cart before loading items from the file.
+                        cart.clear();
                         while ((line = br.readLine()) != null) {
                             cart.add(line);
                         }
